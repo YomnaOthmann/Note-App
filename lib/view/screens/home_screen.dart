@@ -1,37 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:nota_app/view/widgets/custom_note_item.dart';
 
-import '../widgets/custom_appbar.dart';
-import '../widgets/notes_listview.dart';
+import '../widgets/note_bottom_sheet.dart';
+import '../widgets/note_screen_body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: NotesScreenBody(),
-    );
-  }
-}
-
-class NotesScreenBody extends StatelessWidget {
-  const NotesScreenBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const CustomAppBar(),
-            const SizedBox(
-              height: 16,
+    return Scaffold(
+      body: const NotesScreenBody(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
             ),
-            NotesListView(),
-          ],
+            context: context,
+            builder: (context) {
+              return const AddNoteBottomSheet();
+            },
+          );
+        },
+        child: const Icon(
+          Icons.add,
         ),
       ),
     );

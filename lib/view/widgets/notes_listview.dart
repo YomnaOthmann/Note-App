@@ -7,6 +7,8 @@ class NotesListView extends StatelessWidget {
     super.key,
   });
 
+  final data = const [];
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
