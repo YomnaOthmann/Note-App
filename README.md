@@ -1,6 +1,6 @@
-# nota_app
+# Note App
 
-A new Flutter project.
+A new Flutter project using Hive local database.
 
 ## Getting Started
 
