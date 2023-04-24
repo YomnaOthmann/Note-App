@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
+              borderRadius: BorderRadius.circular(16),
             ),
             context: context,
             builder: (context) {
