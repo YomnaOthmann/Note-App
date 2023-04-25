@@ -14,7 +14,10 @@ class NotesScreenBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: const [
-            CustomAppBar(),
+            CustomAppBar(
+              icon: Icons.search,
+              title: "Notes",
+            ),
             SizedBox(
               height: 16,
             ),
