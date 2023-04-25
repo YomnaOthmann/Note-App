@@ -4,13 +4,15 @@ import '../../constants/colors.dart';
 
 class CustomAddButton extends StatelessWidget {
   const CustomAddButton({
+    required this.pressed,
     super.key,
   });
+  final VoidCallback pressed;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: pressed,
       style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.kPrimaryColor,
           elevation: 0.0,

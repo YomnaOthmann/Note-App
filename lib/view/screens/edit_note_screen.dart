@@ -16,31 +16,48 @@ class EditnoteScreen extends StatelessWidget {
   }
 }
 
-class EditNoteBody extends StatelessWidget {
+class EditNoteBody extends StatefulWidget {
   const EditNoteBody({super.key});
+
+  @override
+  State<EditNoteBody> createState() => _EditNoteBodyState();
+}
+
+class _EditNoteBodyState extends State<EditNoteBody> {
+  final GlobalKey<FormState> formKey = GlobalKey();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  TextEditingController titleController = TextEditingController();
+  TextEditingController contentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Column(
-        children: const [
-          CustomAppBar(
-            icon: FontAwesomeIcons.check,
-            title: "Edit Note",
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          CustomTextField(hint: "Title"),
-          SizedBox(
-            height: 20,
-          ),
-          CustomTextField(
-            hint: "Content",
-            maxLines: 5,
-          ),
-        ],
+      child: Form(
+        key: formKey,
+        child: Column(
+          children: [
+            const CustomAppBar(
+              icon: FontAwesomeIcons.check,
+              title: "Edit Note",
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            CustomTextField(
+              hint: "Title",
+              controller: titleController,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            CustomTextField(
+              hint: "Content",
+              maxLines: 5,
+              controller: contentController,
+            ),
+          ],
+        ),
       ),
     );
   }

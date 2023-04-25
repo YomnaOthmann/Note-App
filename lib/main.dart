@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:nota_app/constants/strings.dart';
 import 'package:nota_app/view/screens/home_screen.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+
+  await Hive.openBox(kNoteBox);
   runApp(const NoteApp());
 }
 
 class NoteApp extends StatelessWidget {
   const NoteApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
