@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nota_app/constants/colors.dart';
 
 import 'add_button.dart';
 import 'custom_textfield.dart';
@@ -17,21 +16,21 @@ class AddNoteBottomSheet extends StatelessWidget {
         //key: formKey,
         child: SingleChildScrollView(
           child: Column(
-            children: [
+            children: const [
               CustomTextField(
                 hint: "Title",
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
               CustomTextField(
                 hint: "Content",
                 maxLines: 5,
               ),
-              const SizedBox(
+              SizedBox(
                 height: 40,
               ),
-              const CustomAddButton()
+              CustomAddButton()
             ],
           ),
         ),
