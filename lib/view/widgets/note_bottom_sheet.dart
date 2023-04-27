@@ -59,9 +59,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
                 } else {
-                  setState(() {
-                    autovalidateMode = AutovalidateMode.always;
-                  });
+                  autovalidateMode = AutovalidateMode.always;
+                  setState(() {});
                 }
               },
             )
